@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.exponea-sf-link-wrapper {
+	margin-bottom: 16px;
+}
+
+.exponea-sf-link-wrapper--new {
+	margin-top: 16px;
+}
+
+.exponea-sf-link {
+	display: inline-block;
+	margin-left: 8px;
+}
+
+.exponea-sf-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1000001;
+}
+
+.exponea-sf-overlay.active {
+	display: block;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-overlay.active {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.exponea-sf-modal {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 16px);
+	height: calc(100% - 16px);
+	margin: 8px;
+	background-color: #f5e8e1;
+	padding: 32px 16px;
+	overflow-y: scroll;
+	z-index: 1000002;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal {
+		position: relative;
+		width: calc(100% - 32px);
+		max-width: 1440px;
+		height: calc(100% - 32px);
+		max-height: 840px;
+		margin: 16px;
+		overflow-x: hidden;
+	}
+}
+
+.exponea-sf-modal {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.exponea-sf-modal::-webkit-scrollbar {
+    display: none;
+}
+
+.active .exponea-sf-modal {
+	display: block;
+}
+
+body.noscroll {
+	overflow: hidden;
+}
+
+.exponea-sf-modal-back-wrapper {
+	display: none;
+	position: absolute;
+	top: 12px;
+	left: 16px;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-back-wrapper {
+		left: 24px;
+	}
+	
+	.exponea-sf-modal-back-wrapper:hover {
+		cursor: pointer;
+	}
+}
+
+.exponea-sf-modal-back {
+	display: inline-block;
+}
+
+.exponea-sf-modal-back:before, .exponea-sf-modal-back:after {
+	content: '';
+	position: absolute;
+	top: 8px;
+	width: 13px;
+	height: 2px;
+	background: #404040;
+}
+
+.exponea-sf-modal-back:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 16px;
+}
+
+.exponea-sf-modal-back:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-back:before, .exponea-sf-modal-back:after {
+		width: 16px;
+	}
+	
+	.exponea-sf-modal-back:before {
+		top: 19px;
+	}
+}
+
+.exponea-sf-modal-back-desc {
+	display: none;
+}
+
+@media only screen and (min-width: 480px) {
+	.exponea-sf-modal-back-desc {
+		display: inline-block;
+		padding-left: 24px;
+		font-size: 0.875rem;
+		line-height: 29px;
+	}
+}
+
+.exponea-sf-modal-close {
+	display: inline-block;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 24px;
+	height: 19px;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-close:hover {
+		cursor: pointer;
+	}
+}
+
+.exponea-sf-modal-close:before, .exponea-sf-modal-close:after {
+	content: '';
+	position: absolute;
+	top: 8px;
+	width: 100%;
+	height: 2px;
+	background: #404040;
+}
+
+.exponea-sf-modal-close:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.exponea-sf-modal-close:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#step-1, #step-2, #step-3, #step-3-info, #step-4 {
+	position: absolute;
+	width: calc(100% - 32px);
+	padding-bottom: 40px;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: linear;
+	text-align: center;
+}
+
+@media only screen and (min-width: 960px) {
+	#step-1, #step-2, #step-3, #step-3-info, #step-4 {
+		left: 0;
+		width: 100%;
+		padding-bottom: 0;
+	}
+}
+
+#step-2, #step-3, #step-3-info, #step-4 {
+	display: none;
+	opacity: 0;
+}
+
+.exponea-sf-modal-header {
+	margin-top: 24px;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-header {
+		font-size: 2rem;
+		padding: 0 32px;
+	}
+}
+
+.exponea-sf-modal-header--reopen {
+	display: none;
+}
+
+.exponea-sf-modal-section {
+	margin-top: 8px;
+	font-size: 1rem;
+	color: #808080;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-section {
+		padding: 0 32px;
+	}
+}
+
+.exponea-sf-modal-section--reopen {
+	display: none;
+}
+
+.exponea-sf-modal-link {
+	margin-top: 16px;
+	font-size: 1rem;
+	text-decoration: underline;
+}
+
+.exponea-sf-modal-link:hover {
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-img-flex {
+		display: flex;
+		margin: 64px 40px;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+		scroll-behavior: smooth;
+	}
+	
+	#step-3 .exponea-sf-modal-img-flex, #step-4 .exponea-sf-modal-img-flex {
+		margin-bottom: 0;
+	}
+	
+	.exponea-sf-modal-img-flex::-webkit-scrollbar {
+		display: none;
+	}
+	
+	.exponea-sf-modal-img-flex:not(.carousel) {
+		justify-content: space-evenly;
+	}
+}
+
+.carousel-control-prev, .carousel-control-next {
+	display: none;
+}
+
+@media only screen and (min-width: 960px) {
+	.carousel-control-prev, .carousel-control-next {
+		position: absolute;
+		top: 53%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 48px;
+		height: 48px;
+		z-index: 1;
+	}
+	
+	.carousel-control-prev {
+		left: 16px;
+	}
+	
+	.carousel-control-next {
+		right: 16px;
+	}
+	
+	.carousel-control-next:after, .carousel-control-prev:after {
+		position: absolute;
+		content: '';
+		width: 32px;
+		height: 32px;
+		background-size: 32px 32px;
+	}
+	
+	.carousel-control-next:after {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 64'%3E%3Cpolygon fill='%23000' points='2.96 7.96 0.13 10.79 21.34 32 0.13 53.21 2.96 56.04 27 32 2.96 7.96'/%3E%3C/svg%3E");
+	}
+	
+	.carousel-control-prev:after {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 64'%3E%3Cpolygon fill='%23000' points='26.87 10.74 24.04 7.92 0 31.96 24.04 56 26.87 53.17 5.66 31.96 26.87 10.74'/%3E%3C/svg%3E");
+	}
+	
+	.hidden {
+		display: none;
+	}
+}
+
+.exponea-sf-modal-img-wrapper {
+	position: relative;
+	margin-top: 48px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 380px;
+}
+
+#step-4 .exponea-sf-modal-img-wrapper {
+	flex-basis: 100%;
+}
+
+.exponea-sf-modal-img-wrapper:last-child {
+	margin-bottom: 16px;
+}
+
+.exponea-sf-modal-img-wrapper--empty {
+	display: none;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-img-wrapper {
+		flex-basis: 30%;
+		flex-shrink: 0;
+		max-width: 380px;
+		margin: 0;
+	}
+	
+	.exponea-sf-modal-img-wrapper:not(:last-child) {
+		margin-right: 32px;
+	}
+	
+	.exponea-sf-modal-img-wrapper:last-child {
+		margin-bottom: 0;
+	}
+	
+	.exponea-sf-modal-img-wrapper:not(.exponea-sf-modal-img-wrapper--none):hover {
+		cursor: pointer;
+	}
+	
+	#step-4 .exponea-sf-modal-img-wrapper:hover {
+		cursor: default;
+	}
+	
+	.exponea-sf-modal-img-wrapper.faded-right {
+		-webkit-mask-image: linear-gradient(to left, transparent 82%, black 100%);
+		mask-image: linear-gradient(to left, transparent 82%, black 100%);
+	}
+	
+	.exponea-sf-modal-img-wrapper.faded-left {
+		-webkit-mask-image: linear-gradient(to right, transparent 82%, black 100%);
+		mask-image: linear-gradient(to right, transparent 82%, black 100%);
+	}
+}
+
+.exponea-sf-modal-img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	border-radius: 50%;
+}
+
+.exponea-sf-modal-product-img {
+	position: absolute;
+	top: 5%;
+	left: 41%;
+	width: 18.685%;
+	height: auto;
+	max-width: 71px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+.exponea-sf-modal-img-wrapper--none .exponea-sf-modal-img {
+	opacity: 30%;
+}
+
+.exponea-sf-modal-product-swatch {
+	position: absolute;
+	bottom: 20%;
+	right: 25%;
+	width: 26.316%;
+	max-width: 100px;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-product-swatch {
+		right: 12%;
+		width: 39.475%;
+		max-width: 150px;
+	}
+}
+
+.exponea-sf-modal-img-overlay {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	border-radius: 50%;
+}
+
+.exponea-sf-modal-img-desc {
+	margin-top: 16px;
+	margin-bottom: 8px;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-img-desc {
+		font-size: 1.125rem;
+	}
+}
+
+.exponea-sf-modal-img-wrapper--none .exponea-sf-modal-img-desc {
+	opacity: 30%;
+}
+
+.exponea-sf-modal-list {
+	margin-bottom: 8px;
+}
+
+.exponea-sf-modal-list:last-child {
+	margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-list:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.exponea-sf-modal-img-wrapper--none .exponea-sf-modal-list {
+	display: none;
+}
+
+.exponea-sf-modal-list--none {
+	display: none;
+}
+
+.exponea-sf-modal-img-wrapper--none .exponea-sf-modal-list--none {
+	display: block;
+}
+
+.exponea-sf-modal-list-item {
+	font-size: 0.875rem;
+	font-weight: 300;
+}
+
+.exponea-sf-modal-list-item:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.exponea-sf-modal-list-icon {
+	margin-right: 8px;
+}
+
+.exponea-sf-modal-tip {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: 0.875rem;
+	font-weight: 300;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-tip {
+		margin-top: 32px;
+	}
+}
+
+.exponea-sf-modal-info-flex {
+	margin-top: 48px;
+	margin-bottom: 64px;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-info-flex {
+		display: flex;
+		margin: 64px 40px;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.exponea-sf-modal-info-wrapper {
+	margin-top: 40px;
+	text-align: left;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-info-wrapper {
+		flex-basis: 40%;
+		margin-top: 0;
+		margin-left: 32px;
+	}
+}
+
+.exponea-sf-modal-info-heading {
+	margin-bottom: 8px;
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: #000;
+}
+
+.exponea-sf-modal-info-desc {
+	font-size: 1rem;
+	color: #808080;
+}
+
+.exponea-sf-modal-info-desc:not(:last-child) {
+	margin-bottom: 24px;
+}
+
+.exponea-sf-modal-button-wrapper {
+	margin-top: 16px;
+}
+
+.exponea-sf-modal-button-wrapper:last-child {
+	margin-bottom: 64px;
+}
+
+.exponea-sf-modal-button {
+	display: inline-block;
+	min-width: 240px;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 32px;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-button:hover {
+		cursor: pointer;
+		border-color: #404040;
+		background-color: #404040;
+	}
+}
+
+.exponea-sf-modal-button--reopen {
+	display: none;
+}
+
+.exponea-sf-modal-button--restart {
+	display: none;
+    color: #000;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 960px) {
+	.exponea-sf-modal-button--restart:hover {
+		cursor: pointer;
+		text-decoration: none;
+	}
+}
